@@ -6,17 +6,20 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class FunionamientoEj1 {
-     Scanner sc = new Scanner(System.in);
 
-    public void Ejercicio1(){
-
+    public static void Ejercicio1(){
+        Scanner sc = new Scanner(System.in);
+        Scanner scC = new Scanner(System.in);
         System.out.println("Bienvenido al ejercicio 1:" +
                             "Por favor ingrese en el siguiente orden los datos pedidos:" +
                             "Nombre - Edad - DNI - Sexo - Peso - Altura");
 
         Persona persona1 = new Persona(sc.nextLine(),sc.nextInt(),sc.nextInt(),
-            sc.nextLine().charAt(0),sc.nextFloat(),sc.nextFloat());
-        Persona persona2 = new Persona(sc.nextLine(),sc.nextInt(),sc.nextLine().charAt(0));
+            scC.next().charAt(0),sc.nextFloat(),sc.nextFloat());
+                sc.nextLine();
+        System.out.println("Por favor ingrese en el siguiente orden los datos pedidos:" +
+                "Nombre - Edad - Sexo");
+        Persona persona2 = new Persona(sc.nextLine(),sc.nextInt(),scC.next().charAt(0));
         Persona persona3 = new Persona();
         persona3.setNombre("Pablo");persona3.setEdad(31);persona3.setDni(44879521);persona3.setSexo('M');
         persona3.setPeso(79.89f);persona3.setAltura(1.72f);

@@ -5,6 +5,7 @@ public class Password {
     private String contrasenia;
 
     public Password() {
+        this.generarContrasenbia(this.longitud);
     }
 
     public Password(int longitud) {
@@ -58,5 +59,19 @@ public class Password {
     }
 
 
+    @Override
+    public String toString() {
+        return "Password{" +
+                "longitud=" + longitud +
+                ", contrasenia='" + contrasenia + '\'' +
+                '}';
+    }
 
+    public Boolean compareTo(Password pass) {
+        Boolean result = this.longitud == pass.longitud;
+        if (result == true) {
+            result = this.contrasenia == pass.contrasenia;
+        }
+        return result;
+    }
 }
